@@ -12,10 +12,10 @@ class TestCalculator(unittest.TestCase):
     def test_multiply(self):
         self.assertEqual(multiply(2, 4), 8)
 
-    def test_power():
-        assert power(2, 3) == 8
-        assert power(5, 0) == 1
-    
+    def test_power(self):
+        self.assertEqual(power(2, 3), 8)
+        self.assertEqual(power(5, 0), 1)
+
     def test_divide(self):
         self.assertEqual(divide(10, 2), 5)
 
