@@ -1,0 +1,4 @@
+git add .
+git status
+git commit -m "Main commit - Initial"
+git push origin main
