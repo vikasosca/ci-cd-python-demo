@@ -1,7 +1,15 @@
 from app import app
 
 def test_home():
+    """Test the home route."""
     client = app.test_client()
-    response = client.get('/')
+    response = client.get("/")
     assert response.status_code == 200
-    assert b"Hello, Flask is running!"  in response.data  # or your actual message
+    assert b"Hello from Flask!" in response.data
+
+def test_add():
+    """Test the /add/<a>/<b> route."""
+    client = app.test_client()
+    response = client.get("/add/2/3")
+    assert response.status_code == 200
+    assert b"2 + 3 = 5" in response.data
