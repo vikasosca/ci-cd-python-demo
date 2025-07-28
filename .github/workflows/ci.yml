@@ -1,0 +1,40 @@
+name: Python CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Lint with flake8
+        run: |
+          flake8 src/ tests/
+
+      - name: Run tests with pytest
+        run: |
+          python -m pytest tests/ --verbose
+
+      - name: Simulate Deployment
+        run: |
+          echo "Deploying version $(python --version) to staging..."
+          mkdir -p /tmp/deploy/src
+          cp -r src/* /tmp/deploy/src/
+          echo "App deployed to /tmp/deploy"
