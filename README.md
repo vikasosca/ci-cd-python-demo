@@ -1,2 +1,2 @@
-# my-python-app
-CI/CD pipeline - DIY
+# ci-cd-python-demo
+Learning GitHub Pull Requests and Branching!

@@ -10,8 +10,8 @@ def home():
 
 @app.route("/add/<int:a>/<int:b>")
 def add(a, b):
-    result = a + b
-    return f"<p>{a} + {b} = {result}</p>"
+    result = a * b
+    return f"<p>{a} * {b} = {result}</p>"
 
 # This makes it runnable locally
 if __name__ == "__main__":
