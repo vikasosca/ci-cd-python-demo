@@ -21,4 +21,4 @@ def divide(a, b):
 
 def power(a, b):
     """Return a^b"""
-    return a ** b
+    return a**b
